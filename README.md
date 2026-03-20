@@ -55,7 +55,6 @@ Further seeds are set directly inside scripts where Gaussian Processes are fitte
 
 
 
-* The approximate time needed to reproduce all the analyses for this paper on a standard (year 2026) desktop machine is 5-7 days of human time.
 
 
 

@@ -41,11 +41,11 @@ The content and usage of the generic Deep Equilibrium Nets framework are outline
 
 ### Controlled randomness
 
-The random seed for our computations in *Section 5 - Results* is set at ``Using_Machine_Learning_to_Compute_Constrained_Optimal_Carbon_Tax_Rules/DEQN_for_IAM/config/config.yaml``, line 10.
+The random seed for our computations in *Section 5 - Results* is set at ``JPE_Macro_Using_ML_to_compute_constrained_optimal_carbon_tax_rules/DEQN_for_IAM/config/config.yaml``, line 10.
 
 Further seeds are set directly inside scripts where Gaussian Processes are fitted.
 
-* ``Using_Machine_Learning_to_Compute_Constrained_Optimal_Carbon_Tax_Rules/DEQN_for_IAM/``
+* ``JPE_Macro_Using_ML_to_compute_constrained_optimal_carbon_tax_rules/DEQN_for_IAM/``
 
 ### Memory and runtime requirements
 

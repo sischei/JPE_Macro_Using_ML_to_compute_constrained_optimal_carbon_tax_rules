@@ -281,8 +281,15 @@ The data is stored in the folder `DEQN_for_IAM/calibration_data/dice_rcp_data.xl
 
 ## Citation
 
-TBD
+```bibtex
+@article{kubler2025using,
+  title={Using machine learning to compute constrained optimal carbon tax rules},
+  author={K{\"u}bler, Felix and Scheidegger, Simon and Surbek, Oliver},
+  journal={arXiv preprint arXiv:2507.01704},
+  year={2025}
+}
+```
 
 ## Support
 
-TBD
+This research was supported in part by the University of Chicago Griffin Applied Economics Incubator, and the Swiss National Science Foundation (SNF), under project ID "Can Economic Policy Mitigate Climate-Change".

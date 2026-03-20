@@ -20,6 +20,8 @@ probs_kappa = [0.333, 0.334, 0.333]
 shock_values = tf.constant(list(itertools.product(shocks_kappa, shocks_TP)))
 shock_probs = tf.constant([ p_k * p_tp  for p_k, p_tp in list(itertools.product(probs_kappa, probs_TP))])
 
+rng_pp = tf.random.Generator.from_seed(1234)
+
 def sample_categorical_from_generator(rng, probs, batch_size):
     """Sample categorical indices using a tf.random.Generator."""
     # Compute cumulative distribution function (CDF)

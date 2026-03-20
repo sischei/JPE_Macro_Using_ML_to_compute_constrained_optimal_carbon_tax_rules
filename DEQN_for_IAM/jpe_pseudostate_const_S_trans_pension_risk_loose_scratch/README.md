@@ -27,7 +27,7 @@ $ python run_deepnet.py MODEL_NAME=jpe_pseudostate_const_S_trans_pension_risk_lo
 $ export USE_CONFIG_FROM_RUN_DIR=runs/jpe_pseudostate_const_S_trans_pension_risk_loose_scratch/<RUN_DIR> && python post_process_GP_init_sampling.py STARTING_POINT=LATEST hydra.run.dir=$USE_CONFIG_FROM_RUN_DIR
 ```
 
-5. Then point to the BAU reference welfares by changing the user settings in the file `DEQN_for_IAM/post_process_GP_optim_pipeline_64.py` lines 49-51 as follows:
+5. Then point to the BAU reference welfares by changing the user settings in the file `DEQN_for_IAM/post_process_GP_optim_pipeline_64.py` lines 45-51 as follows:
 
 ```python
 # set the path to the BAU welfares

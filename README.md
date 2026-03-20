@@ -49,10 +49,7 @@ Further seeds are set directly inside scripts where Gaussian Processes are fitte
 
 ### Memory and runtime requirements
 
-* To solve one IAM Surrogate model as discussed in *Section 5 - Results* until full convergence, it requires between 1 and 12 hours on nuvolos. All those models presented in the paper were solved using our [DEQN library](DEQN_for_IAM), which we ran on an 16-core Intel compute node on [https://nuvolos.cloud](https://nuvolos.cloud) with 64GB of RAM, and 50Gb of fast local storage (SSD).
-
-* To fit Gaussian Process Surrogates as discussed in *Section 5 - Results* until full convergence, it requires between 30 minutes and 1 hour on nuvolos. All those models presented in the paper were solved using our [DEQN library](DEQN_for_IAM), which we ran on an 16-core Intel compute node on [https://nuvolos.cloud](https://nuvolos.cloud) with 64GB of RAM, and 50Gb of fast local storage (SSD).
-
+* All those models presented in *Section 5 - Results* of the paper were solved using our [DEQN library](DEQN_for_IAM), which we ran on an 16-core Intel compute node on [https://nuvolos.cloud](https://nuvolos.cloud) with 64GB of RAM, and 50Gb of fast local storage (SSD).
 
 
 

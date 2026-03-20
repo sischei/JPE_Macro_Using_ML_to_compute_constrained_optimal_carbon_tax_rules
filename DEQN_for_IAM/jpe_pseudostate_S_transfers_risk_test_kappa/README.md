@@ -81,7 +81,7 @@ Next, to compute the optimal planner policy, run:
 ```
 $ export USE_CONFIG_FROM_RUN_DIR=runs/jpe_pseudostate_S_transfers_risk_test_kappa/appendix_final && python max_pareto_single_GP_optimized_2taxes_appendix.py STARTING_POINT=LATEST hydra.run.dir=$USE_CONFIG_FROM_RUN_DIR
 ```
-Next, point to the correct BAU welfares by editing line 30 in the file `DEQN_for_IAM/post_process_prepare_figures_ee_tables.py` as follows:
+Next, point to the correct BAU welfares by editing line 24 in the file `DEQN_for_IAM/post_process_prepare_figures_ee_tables.py` as follows:
 ```python
 BAU_MODEL_SOLUTION = 'high_kappa' # change to 'high_kappa' for replication of online appendix D.2 
 

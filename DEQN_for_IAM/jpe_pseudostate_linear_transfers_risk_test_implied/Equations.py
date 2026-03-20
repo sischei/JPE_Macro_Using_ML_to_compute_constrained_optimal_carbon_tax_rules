@@ -7,9 +7,9 @@ import tensorflow as tf
 
 
 
-def equations(state, policy_state):
+def equations(state, policy_state, training=None):
 
-     E_t = State.E_t_gen(state, policy_state)
+     E_t = State.E_t_gen(state, policy_state, training=training)
     
      loss_dict = {}
     

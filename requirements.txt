@@ -1,0 +1,24 @@
+# Core scientific stack
+numpy==1.22.3
+pandas==1.4.2
+scipy==1.8.0
+matplotlib==3.5.1
+
+# Deep learning
+tensorflow==2.13.1
+torch==2.4.1+cu118
+
+# Gaussian process / surrogate modeling
+gpytorch==1.13
+smt==2.6.3
+
+# Configuration
+hydra-core==1.2.0
+omegaconf==2.2.1
+
+# Parallelization and utilities
+joblib==1.1.0
+cloudpickle==2.2.1
+psutil==5.9.0
+six==1.16.0
+openpyxl==3.1.5

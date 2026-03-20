@@ -1,0 +1,8 @@
+optimizer: mao
+learning_rate: 1e-5        # Base learning rate (will be used as global_lr)
+clipvalue: 1
+global_lr: 1e-5
+beta1: 0.9
+beta2: 0.999
+epsilon: 1e-8
+num_tasks: 35 #19 # should be 19 (N=18 equations + 1 penalty)

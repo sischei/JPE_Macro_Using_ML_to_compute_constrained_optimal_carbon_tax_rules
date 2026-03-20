@@ -1,0 +1,222 @@
+hydra: 
+  run:
+    dir: runs/${MODEL_NAME}/${now:%Y-%m-%d}/${now:%H-%M-%S}
+defaults:
+  - constants: OLG_BAU
+  - net: OLG_small_gelu
+  - optimizer: OLG_BAU 
+  - run: OLG_BAU_new 
+  - variables: OLG_BAU
+seed: 151082
+# can be NEW, LATEST, or a given checkpoint filename
+# STARTING_POINT: LATEST
+STARTING_POINT: NEW 
+CHECKPOINT_INTERVAL: 10
+MAX_TO_KEEP_NUMBER: 10
+MODEL_NAME: jpe_bau_final 
+#False-> Simulation; True -> draw 
+initialize_each_episode: True
+error_filename: error_file.txt
+enable_check_numerics: False
+loss_choice:  mse #mse #huber
+use_weight_adjustment: False #True
+# switch for different optimizers:
+# set reload_optimizer = True if you are reloading adam and realod_optimizer = False if you are changing
+use_flex_checkpoint: True # use custom checkpoint or tf.train.Checkpoint
+reload_optimizer: True # reload optim weights from checkpoint (for the same optim) or use a new one from config
+
+# Loss Reweighting Options
+use_loss_reweighting: False # Set to True to enable reweighting
+print_weights_every_n_episodes: 10
+# Options for reweighting_scheme: "softmax", "inverse", or "focal"
+reweighting_scheme: focal
+
+# ---------------------------------------------------------------------------
+# improved shuffling before batching
+# ---------------------------------------------------------------------------
+# False (default)  → legacy shuffling exactly as before this update
+# True             → use the new pre-batch shuffle introduced in Graphs.py
+use_new_shuffling: True #False #True
+
+# ---------------------------------------------------------------------------
+# NOTE: All Settings below this line are not used (turned off)
+# ---------------------------------------------------------------------------
+
+
+
+
+# ---------------------------------------------------------------------------
+# Sensitivity Training with Augmented Loss
+# ---------------------------------------------------------------------------
+# Set to True to enable the derivative-based penalty on the loss function
+use_foc_derivative_loss: False
+foc_derivative_gate_mode: batch_rmse   # use the global RMSE to gate, not per-equation
+
+# The lambda weight for the sensitivity loss term.
+# Start with a SMALL value (e.g., 1e-3) because this is a second-order gradient penalty.
+foc_derivative_lambda: 0.0  # base value (overridden by schedule)
+
+# A list of the pseudo-state parameters to calculate sensitivities against
+sensitivity_parameters: [
+    'tau_const_x', 'tau_S_x', 'tau_kappa_x', 'tau_TP_x', 'tau_x', 'tshare1_x', 'tshare2_x', 'tshare3_x', 
+    'tshare4_x', 'tshare5_x', 'tshare6_x', 'tshare7_x', 'tshare8_x', 
+    'tshare9_x', 'tshare10_x', 'tshare11_x', 'tshare12_x'
+]
+
+# Parameters for the Gated Penalty ---
+
+# Sets the activation threshold for the gated penalty. The penalty begins to activate
+# when the on-screen 'Normalized epoch loss without penalties' (which is the RMSE
+# of the residuals) drops below this `tau` value.
+# - To make the penalty ALWAYS ON: set to a very large number (e.g., 1.0e10).
+# - To make the penalty DELAYED (gated): set to a small number (e.g., 0.1).
+foc_derivative_gate_tau: 0.35
+
+# Sets the sharpness of the on/off transition around the `tau` threshold. This
+# controls HOW the penalty activates when the on-screen RMSE approaches `tau`.
+# - High kappa (e.g., 100+): Acts like a "switch". The penalty will turn on
+#   abruptly as the 'Normalized epoch loss without penalties' drops below `tau`.
+# - Low kappa (e.g., 10): Acts like a "dimmer". The penalty will fade in
+#   gradually as the loss approaches `tau`, starting even before it's below the threshold.
+foc_derivative_gate_kappa: 10 #5 #0.10
+
+# Compensation flag for derivative penalty scaling:
+# If True, the derivative penalty is multiplied by the number of equations so that
+# the final division by /no_eq does not shrink it. If False, legacy averaging is used.
+deriv_compensate_no_eq: False          # do NOT "restore" the /no_eq — keeps aux loss modest
+bounds_compensate_no_eq: True # True          # (optional) give bounds same scaling so they still matter
+
+# =============================================================================
+# Lambda (derivative weight) Scheduler — OPTIONAL
+# -----------------------------------------------------------------------------
+# If this block is omitted, the code uses the constant 'foc_derivative_lambda'.
+# If this block is present, it overrides the constant and evolves λ online.
+#
+# Schema:
+#   lambda_scheduler:
+#     by: "steps" | "episodes"                 # "steps" uses optimizer.iterations; "episodes" uses current_episode
+#     type: "constant" | "piecewise" | "exponential" | "linear_warmup" | "cosine"
+#     kwargs: { ... }                          # see individual examples below
+#
+# Choose ONE of the examples below by uncommenting it and commenting the others.
+# =============================================================================
+
+# --------------------------------
+# (E) Episode-based LINEAR WARMUP
+# --------------------------------
+lambda_scheduler:
+ by: episodes
+ type: linear_warmup
+ kwargs:
+   # Ramp λ linearly from 'start' to 'end' between 'start_episode' and 'end_episode' (inclusive).
+   start: 1.0e-9
+   end:   1.0e-5
+   start_episode: 1
+   end_episode:   200
+
+
+
+
+# -----------------------------------------------------------------------------
+# IFT-CONSISTENT TANGENT PENALTY (SAFE VJP/JVP)
+# -----------------------------------------------------------------------------
+# WHAT IT DOES:
+#   This term enforces the *implicit* sensitivity condition implied by G(x, p) = 0:
+#     G_y(x,p) * (dp/dθ) + G_θ(x,p,θ) ≈ 0
+#   It prevents the surrogate policy p(x,θ) from collapsing/flattening in θ
+#   by penalizing the residual of the tangent equation along random probes.
+#
+#   Implementation detail (safe & efficient):
+#     - Uses vector–Jacobian products (VJPs) to compute directional derivatives
+#       of φ = v^T G through the policy pathway, without forming/inverting G_y.
+#     - Aggregates a few random directions v (equation space) and u (θ space).
+
+use_ift_tangent_loss: False # True
+
+# -----------------------------------------------------------------------------
+# STRENGTH (λ): Either a fixed scalar or a scheduler
+# -----------------------------------------------------------------------------
+#   'ift_tangent_lambda' is the weight on the IFT loss. If a scheduler is provided
+#   in 'ift_lambda_scheduler', the scheduler overrides this scalar.
+
+#
+# QUICK START (fixed weight):
+#ift_tangent_lambda: 1.0e-4
+
+# SAFE DEFAULT FOR BRING-UP (compact mode; always-on small λ)
+ift_tangent_lambda: 0.0
+#ift_lambda_scheduler: null   # enable once things run; see commented warmup below
+
+# Example warmup (enable later if desired):
+ift_lambda_scheduler:
+  by: steps
+  type: linear_warmup
+  kwargs:
+    start: 0.0
+    end:   1.0e-5      # ceiling once residuals are modest, default 2e-5
+    steps: 120000
+
+# -----------------------------------------------------------------------------
+# PROJECTIONS (stochastic probes)
+# -----------------------------------------------------------------------------
+#   ift_num_v_probes   : number of random equation-space test vectors v per equation (or per concat in compact mode)
+#   ift_num_theta_dirs : number of random θ-space directions u per batch
+#
+# COST VS BENEFIT:
+#   - Each (v,u) adds one extra VJP: modest cost; 1–3 VJPs per step is usually fine in compact mode.
+#   - Start small; increase if IFT metrics look noisy or under-constrained.
+
+ift_num_v_probes: 1        # compact start (increase to 2 once stable)
+ift_num_theta_dirs: 1      # compact start (increase to 2 if needed)
+# -----------------------------------------------------------------------------
+# GATING (when to activate IFT)
+# -----------------------------------------------------------------------------
+#   Two modes:
+#     - "batch_rmse": compare the global RMSE (aggregate over all equations) to τ
+#     - "per_equation": compare each equation's mean |residual| to τ (stricter, scale-sensitive)
+
+
+# After bring-up, you can restore a warmup + a realistic gate, for example:
+ift_gate_mode: batch_rmse
+ift_gate_tau:  0.06
+ift_gate_kappa: 150
+
+# -----------------------------------------------------------------------------
+# PERFORMANCE/SCALING CONTROLS
+# -----------------------------------------------------------------------------
+# - ift_aggregate_probes: build one VJP per probe across all equations (saves memory/compute)
+# - ift_compact_mode    : concatenate all residuals and do a single VJP per probe/θ (fastest)
+ift_aggregate_probes: True # True
+ift_compact_mode: True # True
+
+
+
+# -----------------------------------------------------------------------------
+# OPTIONAL θ-SAMPLING CONTROLS (used if you adopted the improved sampler)
+# -----------------------------------------------------------------------------
+# θ sampling (pseudo-states)
+theta_sampling_mode: lhs_mix     # improved, space-filling sampler
+theta_lhs_frac: 0.9              # 50% Latin Hypercube (stratified interiors)
+theta_edges_frac: 0.05            # 30% edge-biased + clamping to near-bounds
+theta_halton_frac: 0.0           # keep 0 initially (can use later for diversity)
+theta_use_antithetic: true       # pair (u, 1−u): forces symmetry per dim
+theta_edge_eps: 0.02             # clamp exactly at 2% inside lower/upper bounds
+theta_always_fullrange_frac: 0.05 # 10% from full box (ignores curriculum slice)
+
+# Quadrature override (optional; 0 leaves defaults). Valid: 2 or 3.
+quad_order_f: 2
+quad_order_T: 2
+
+# -----------------------------------------------------------------------------
+# TIME / PHASE STRATIFICATION (optional)
+# -----------------------------------------------------------------------------
+taux_stratify: false              # start agents at stratified τ across [0, 0.95]
+taux_strata: 16                  # N_sim_batch = 1024, then ~64 agents will start in each bin with taux_strate =16.
+taux_min_init: 0.0
+taux_max_init: 0.95
+
+# diagnostics / adaptation (cheap)
+theta_hist_every_n_episodes: 10  # histograms to TB every 10 episodes
+theta_adaptive_edges: false       # auto-nudge edge sampling if batch is too central
+theta_adaptive_target_centrality: 0.35
+theta_adaptive_eta: 0.15

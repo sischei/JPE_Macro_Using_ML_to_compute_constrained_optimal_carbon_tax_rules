@@ -1,0 +1,12 @@
+# see https://www.tensorflow.org/api_docs/python/tf/keras/optimizers
+optimizer: Adam
+learning_rate: 1e-5 #1e-5
+clipvalue: 1.0 #1
+# lr_scheduler: ReduceLROnPlateau
+# lr_scheduler_kwargs:
+#   factor: 0.5
+#   patience: 5
+#   min_lr: 1e-7
+#   verbose: True
+#   cooldown: 2
+#   min_delta: 1e-4

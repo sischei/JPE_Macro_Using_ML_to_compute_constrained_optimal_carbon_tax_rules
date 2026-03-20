@@ -1,0 +1,11 @@
+optimizer: AdamW
+learning_rate: 1.0e-4   # baseline
+weight_decay: 1.0e-6    # only if AdamW
+amsgrad: False
+clipnorm: 1.0           # safe gradient clipping
+
+lr_scheduler: CosineDecay
+lr_scheduler_kwargs:
+  initial_learning_rate: 1.e-4
+  decay_steps: 150000
+  alpha: 1.0e-2 # final lr = 1e-5

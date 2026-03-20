@@ -1,0 +1,131 @@
+constants:
+  constants: null
+net:
+  layers:
+  - hidden:
+      units: 256
+      type: dense
+      activation: gelu
+      init_scale: 0.01
+  - hidden:
+      units: 256
+      type: dense
+      activation: gelu
+      init_scale: 0.01
+  - output:
+      type: dense
+      activation: linear
+      init_scale: 0.05
+  net_initializer_mode: fan_avg
+  net_initializer_distribution: uniform
+optimizer:
+  optimizer: Adam
+  learning_rate: 0.0001
+  clipvalue: 1.0
+  lr_scheduler: CosineDecay
+  lr_scheduler_kwargs:
+    initial_learning_rate: 0.0001
+    decay_steps: 1000000
+    alpha: 0.01
+    warmup_target: 0.0001
+    warmup_steps: 0
+run:
+  N_sim_batch: 512
+  N_episode_length: 70
+  N_epochs_per_episode: 1
+  N_minibatch_size: 64
+  N_episodes: 10000
+  keras_precision: float32
+  sorted_within_batch: false
+variables:
+  states: null
+  policies: null
+  definitions: null
+seed: 151082
+STARTING_POINT: LATEST
+CHECKPOINT_INTERVAL: 10
+MAX_TO_KEEP_NUMBER: 10
+MODEL_NAME: jpe_pseudostate_const_S_trans_pension_risk_loose_scratch
+initialize_each_episode: true
+error_filename: error_file.txt
+enable_check_numerics: false
+loss_choice: mse
+use_weight_adjustment: false
+use_flex_checkpoint: true
+reload_optimizer: true
+use_loss_reweighting: false
+print_weights_every_n_episodes: 10
+reweighting_scheme: focal
+use_new_shuffling: true
+use_foc_derivative_loss: false
+foc_derivative_gate_mode: batch_rmse
+foc_derivative_lambda: 0.0
+sensitivity_parameters:
+- tau_const_x
+- tau_S_x
+- tau_kappa_x
+- tau_TP_x
+- tau_S2_x
+- tau_kappa2_x
+- tau_TP2_x
+- tau_Skappa_x
+- tau_STP_x
+- tau_kappaTP_x
+- tau_x
+- tshare1_x
+- tshare2_x
+- tshare3_x
+- tshare4_x
+- tshare5_x
+- tshare6_x
+- tshare7_x
+- tshare8_x
+- tshare9_x
+- tshare10_x
+- tshare11_x
+- tshare12_x
+foc_derivative_gate_tau: 0.35
+foc_derivative_gate_kappa: 10
+deriv_compensate_no_eq: false
+bounds_compensate_no_eq: true
+lambda_scheduler:
+  by: episodes
+  type: linear_warmup
+  kwargs:
+    start: 1.0e-09
+    end: 1.0e-05
+    start_episode: 1
+    end_episode: 200
+use_ift_tangent_loss: false
+ift_tangent_lambda: 0.0
+ift_lambda_scheduler:
+  by: steps
+  type: linear_warmup
+  kwargs:
+    start: 0.0
+    end: 1.0e-05
+    steps: 120000
+ift_num_v_probes: 1
+ift_num_theta_dirs: 1
+ift_gate_mode: batch_rmse
+ift_gate_tau: 0.06
+ift_gate_kappa: 150
+ift_aggregate_probes: true
+ift_compact_mode: true
+theta_sampling_mode: lhs_mix
+theta_lhs_frac: 0.9
+theta_edges_frac: 0.05
+theta_halton_frac: 0.0
+theta_use_antithetic: true
+theta_edge_eps: 0.02
+theta_always_fullrange_frac: 0.05
+quad_order_f: 2
+quad_order_T: 2
+taux_stratify: false
+taux_strata: 16
+taux_min_init: 0.0
+taux_max_init: 0.95
+theta_hist_every_n_episodes: 10
+theta_adaptive_edges: false
+theta_adaptive_target_centrality: 0.35
+theta_adaptive_eta: 0.15

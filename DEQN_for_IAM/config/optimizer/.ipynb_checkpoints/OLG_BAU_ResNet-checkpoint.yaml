@@ -1,0 +1,13 @@
+# see https://www.tensorflow.org/api_docs/python/tf/keras/optimizers
+optimizer: Adam
+amsgrad: False  # Consider setting to False if convergence is slow
+learning_rate: 1e-4  # Align with the scheduler's initial_learning_rate
+clipvalue: 1.0  # Reasonable for stability; monitor gradient clipping
+# Learning rate scheduler: CosineDecayRestarts
+lr_scheduler: CosineDecayRestarts
+lr_scheduler_kwargs:
+  initial_learning_rate: 1e-4  # Starting learning rate (matches optimizer)
+  first_decay_steps: 2500  # Adjust based on total training steps (e.g., 10% of total steps)
+  t_mul: 1.5  # Standard: doubles the cycle length after each restart
+  m_mul: 0.8  # Standard: reduces the initial learning rate by 20% per restart
+  alpha: 0.01  # Minimum learning rate = 1e-6, which is reasonable

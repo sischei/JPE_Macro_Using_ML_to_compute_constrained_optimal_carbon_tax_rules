@@ -1,0 +1,11 @@
+Optimization Results Summary (Squared Exponential Surrogate)
+============================================================
+Model Name        : jpe_pseudostate_const_S_trans_pension_risk_loose_scratch
+Best Welfare Value: -2.424578
+
+Unnormalized Optimal Parameters:
+  Param 0: -0.133757
+  Param 1: 0.542488
+
+Constraints Check:
+  tax_0: [0.32790044]

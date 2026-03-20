@@ -1,0 +1,34 @@
+N_sim_batch: 256
+N_episode_length: 128
+N_epochs_per_episode: 1
+N_minibatch_size: 128
+N_episodes: 50000
+keras_precision: float32
+#expectation_type: monomial
+expectation_type: pseudo_random
+expectation_pseudo_draws: 20
+
+### golden run
+#/home/simon/projects/DSGE_DEQ/src/sudden_stop/runs/nkdsge_no_util_norm/2021-01-27/17-06-41/ckpt-1231
+#x1 x2 substituted, 7 layer, 100 nodes, relu
+#200 x100 x 100first
+# then 200 x 1000 x 500
+# then 200 X 100 x 100 
+
+
+#x1 x2 NOT substituted, 7 layer, 100 nodes, relu
+#200 x100 x 100first
+# then 200 x 1000 x 500
+# then 200 X 100 x 100 
+# does not work nicely, x1 and x2 stick on the top of range
+
+
+## without implied, using x1, x2, all is shit.
+
+# restart golden run, but do vola 10x
+
+
+
+# cube, sampling -- good results, 6,2,2021
+#/home/simon/projects/DSGE_DEQ/src/sudden_stop/runs/nkdsge_no_util_norm/2021-02-06/08-59-10
+

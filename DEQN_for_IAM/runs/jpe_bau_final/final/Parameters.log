@@ -1,0 +1,2 @@
+[2026-03-18 13:49:51,212][absl][WARNING] - Skipping variable loading for optimizer 'Adam', because it has 13 variables whereas the saved optimizer has 1 variables. 
+[2026-03-18 13:49:52,062][matplotlib.font_manager][INFO] - generated new fontManager

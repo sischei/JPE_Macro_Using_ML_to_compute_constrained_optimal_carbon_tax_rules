@@ -1,0 +1,322 @@
+{
+  "0": {
+    "welfare_idx": 0,
+    "rmse": 0.020911845669186628,
+    "mse": 0.00043730528929187954,
+    "mae": 0.005531876368244696,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate0.pcl",
+    "std_original": 0.019503656533490923
+  },
+  "1": {
+    "welfare_idx": 1,
+    "rmse": 0.021993764114095034,
+    "mse": 0.00048372565990645447,
+    "mae": 0.008126587161288138,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate1.pcl",
+    "std_original": 0.02841041143864143
+  },
+  "2": {
+    "welfare_idx": 2,
+    "rmse": 0.016155579669073314,
+    "mse": 0.00026100275444377496,
+    "mae": 0.008361054386641923,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate2.pcl",
+    "std_original": 0.03767383839550921
+  },
+  "3": {
+    "welfare_idx": 3,
+    "rmse": 0.016181345025234894,
+    "mse": 0.000261835926825694,
+    "mae": 0.009099885223617668,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate3.pcl",
+    "std_original": 0.04999478779316757
+  },
+  "4": {
+    "welfare_idx": 4,
+    "rmse": 0.015147228793656592,
+    "mse": 0.00022943854012737937,
+    "mae": 0.009130821985123935,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate4.pcl",
+    "std_original": 0.06141029597771769
+  },
+  "5": {
+    "welfare_idx": 5,
+    "rmse": 0.013828130888214673,
+    "mse": 0.00019121720386159672,
+    "mae": 0.008726467928449845,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate5.pcl",
+    "std_original": 0.075946567006711
+  },
+  "6": {
+    "welfare_idx": 6,
+    "rmse": 0.015246375408994636,
+    "mse": 0.00023245196311199638,
+    "mae": 0.00928558545902622,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate6.pcl",
+    "std_original": 0.07884502497689981
+  },
+  "7": {
+    "welfare_idx": 7,
+    "rmse": 0.018499400304602082,
+    "mse": 0.00034222781162991157,
+    "mae": 0.00977152045844764,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate7.pcl",
+    "std_original": 0.07284267978156483
+  },
+  "8": {
+    "welfare_idx": 8,
+    "rmse": 0.015137061766389267,
+    "mse": 0.00022913063891948375,
+    "mae": 0.00863856068786004,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate8.pcl",
+    "std_original": 0.07392715123279806
+  },
+  "9": {
+    "welfare_idx": 9,
+    "rmse": 0.014082812758430992,
+    "mse": 0.00019832561518902674,
+    "mae": 0.008550272247032488,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate9.pcl",
+    "std_original": 0.07191080585046239
+  },
+  "10": {
+    "welfare_idx": 10,
+    "rmse": 0.015845583366637515,
+    "mse": 0.0002510825122290595,
+    "mae": 0.009828843873304172,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate10.pcl",
+    "std_original": 0.06833420890262937
+  },
+  "11": {
+    "welfare_idx": 11,
+    "rmse": 0.018241194359673044,
+    "mse": 0.00033274117166736766,
+    "mae": 0.011490481801122918,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate11.pcl",
+    "std_original": 0.0645372210321383
+  },
+  "12": {
+    "welfare_idx": 12,
+    "rmse": 0.017795351810801212,
+    "mse": 0.00031667454607018595,
+    "mae": 0.011351219350033583,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate12.pcl",
+    "std_original": 0.08390652169939863
+  },
+  "13": {
+    "welfare_idx": 13,
+    "rmse": 0.019377881916417743,
+    "mse": 0.0003755023075666298,
+    "mae": 0.011846923301800554,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate13.pcl",
+    "std_original": 0.1020576938313541
+  },
+  "14": {
+    "welfare_idx": 14,
+    "rmse": 0.02028266822718366,
+    "mse": 0.0004113866304140055,
+    "mae": 0.012323974273689416,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate14.pcl",
+    "std_original": 0.11821210065201389
+  },
+  "15": {
+    "welfare_idx": 15,
+    "rmse": 0.021286489555814667,
+    "mse": 0.000453114637609807,
+    "mae": 0.012676113912087705,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate15.pcl",
+    "std_original": 0.13221817277580697
+  },
+  "16": {
+    "welfare_idx": 16,
+    "rmse": 0.021745610590753275,
+    "mse": 0.00047287157996468097,
+    "mae": 0.01303424301633565,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate16.pcl",
+    "std_original": 0.143389643519088
+  },
+  "17": {
+    "welfare_idx": 17,
+    "rmse": 0.022470180669899763,
+    "mse": 0.000504909019337937,
+    "mae": 0.013493980740815436,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate17.pcl",
+    "std_original": 0.15155262254718765
+  },
+  "18": {
+    "welfare_idx": 18,
+    "rmse": 0.02294005845889846,
+    "mse": 0.0005262462820976787,
+    "mae": 0.013700504344047458,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate18.pcl",
+    "std_original": 0.15699838940927666
+  },
+  "19": {
+    "welfare_idx": 19,
+    "rmse": 0.02218404015180681,
+    "mse": 0.0004921316374569767,
+    "mae": 0.013495993649504238,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate19.pcl",
+    "std_original": 0.16014773942863436
+  },
+  "20": {
+    "welfare_idx": 20,
+    "rmse": 0.022268547206006357,
+    "mse": 0.0004958881946661336,
+    "mae": 0.013448366605948415,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate20.pcl",
+    "std_original": 0.16103022052262408
+  },
+  "21": {
+    "welfare_idx": 21,
+    "rmse": 0.021495563431282113,
+    "mse": 0.0004620592472282728,
+    "mae": 0.013225350019195408,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate21.pcl",
+    "std_original": 0.16006649916805782
+  },
+  "22": {
+    "welfare_idx": 22,
+    "rmse": 0.02062199369818888,
+    "mse": 0.0004252666240881419,
+    "mae": 0.01302420086837672,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate22.pcl",
+    "std_original": 0.15755614464977896
+  },
+  "23": {
+    "welfare_idx": 23,
+    "rmse": 0.020330559214891884,
+    "mse": 0.00041333163799022523,
+    "mae": 0.013075840824262528,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate23.pcl",
+    "std_original": 0.15387048251052426
+  },
+  "24": {
+    "welfare_idx": 24,
+    "rmse": 0.019789970876022543,
+    "mse": 0.0003916429472738205,
+    "mae": 0.013015708671144974,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate24.pcl",
+    "std_original": 0.14918529837816455
+  },
+  "25": {
+    "welfare_idx": 25,
+    "rmse": 0.01950146572934121,
+    "mse": 0.0003803071655926698,
+    "mae": 0.013100660205048954,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate25.pcl",
+    "std_original": 0.14372426536770877
+  },
+  "26": {
+    "welfare_idx": 26,
+    "rmse": 0.019457430863401775,
+    "mse": 0.00037859161580405993,
+    "mae": 0.013293235697740357,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate26.pcl",
+    "std_original": 0.137674370550959
+  },
+  "27": {
+    "welfare_idx": 27,
+    "rmse": 0.019472597898035675,
+    "mse": 0.0003791820688985834,
+    "mae": 0.013508299878162622,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate27.pcl",
+    "std_original": 0.13122324975454863
+  },
+  "28": {
+    "welfare_idx": 28,
+    "rmse": 0.01996713861003698,
+    "mse": 0.0003986866242724295,
+    "mae": 0.014146062431062565,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate28.pcl",
+    "std_original": 0.12455120004449292
+  },
+  "29": {
+    "welfare_idx": 29,
+    "rmse": 0.020708194213586318,
+    "mse": 0.0004288293075876099,
+    "mae": 0.014877106646397673,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate29.pcl",
+    "std_original": 0.11780757923668606
+  },
+  "30": {
+    "welfare_idx": 30,
+    "rmse": 0.021860014075992657,
+    "mse": 0.00047786021540259705,
+    "mae": 0.01585771319116598,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate30.pcl",
+    "std_original": 0.11112588299564904
+  },
+  "31": {
+    "welfare_idx": 31,
+    "rmse": 0.023434380553647296,
+    "mse": 0.0005491701919331625,
+    "mae": 0.017152790722908966,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate31.pcl",
+    "std_original": 0.10463637752357494
+  },
+  "32": {
+    "welfare_idx": 32,
+    "rmse": 0.024575760862594782,
+    "mse": 0.0006039680219754454,
+    "mae": 0.018158169184506252,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate32.pcl",
+    "std_original": 0.09842642574882486
+  },
+  "33": {
+    "welfare_idx": 33,
+    "rmse": 0.02669492836765069,
+    "mse": 0.0007126192005540015,
+    "mae": 0.0197722714062064,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate33.pcl",
+    "std_original": 0.0925721204725884
+  },
+  "34": {
+    "welfare_idx": 34,
+    "rmse": 0.02870659971999771,
+    "mse": 0.0008240688674841727,
+    "mae": 0.021356387816492586,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate34.pcl",
+    "std_original": 0.08712741198569054
+  },
+  "35": {
+    "welfare_idx": 35,
+    "rmse": 0.03117067145691281,
+    "mse": 0.0009716107590747989,
+    "mae": 0.023223715179077956,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate35.pcl",
+    "std_original": 0.08213215515573064
+  },
+  "36": {
+    "welfare_idx": 36,
+    "rmse": 0.03327532510906447,
+    "mse": 0.0011072472611139363,
+    "mae": 0.0248321185600421,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate36.pcl",
+    "std_original": 0.07761903992470662
+  },
+  "37": {
+    "welfare_idx": 37,
+    "rmse": 0.03639495264600272,
+    "mse": 0.0013245925781047803,
+    "mae": 0.02710829882087616,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate37.pcl",
+    "std_original": 0.07360394272353706
+  },
+  "38": {
+    "welfare_idx": 38,
+    "rmse": 0.038751372340156194,
+    "mse": 0.0015016688582454225,
+    "mae": 0.02893728103498288,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate38.pcl",
+    "std_original": 0.07007608461786537
+  },
+  "39": {
+    "welfare_idx": 39,
+    "rmse": 0.04117780006091006,
+    "mse": 0.0016956112178562845,
+    "mae": 0.03060739625561294,
+    "model_file": "/files/DEQN_new/runs/jpe_pseudostate_S_transfers_risk_test/main_result/individual_GP/MA52/welfare_surrogate39.pcl",
+    "std_original": 0.06702288079806785
+  }
+}

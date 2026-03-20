@@ -6,7 +6,7 @@ matplotlib==3.5.1
 
 # Deep learning
 tensorflow==2.13.1
-torch==2.4.1+cu118
+torch==2.4.1
 
 # Gaussian process / surrogate modeling
 gpytorch==1.13
